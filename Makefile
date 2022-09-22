@@ -10,7 +10,7 @@ PRA		= ./ft_printf/libftprintf.a
 all :$(PRA) $(NAMECL) $(NAMESR)
 
 $(PRA) :
-	$(PRWAY)
+	@$(PRWAY)
 
 $(NAMECL) :
 	@$(CC) $(CL) $(PRA) -o $(NAMECL)
