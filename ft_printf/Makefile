@@ -1,25 +1,25 @@
 SRCS	= ft_printf.c ft_ofuncts.c
-OBJS	= $(SRCS:.c=.o)
+OBJS			= $(SRCS:.c=.o)
 
-NAME	= libftprintf.a
-RM		= rm -rf
-CFLAGS	= -Wall -Wextra -Werror
-CC		= gcc
+CC				= gcc
+RM				= rm -f
+CFLAGS			= -Wall -Wextra -Werror
 
-all: $(OBJS) $(NAME)
-	@$(CC) $(CFLAGS) -c -o ft_printf.o ft_printf.c
-	@$(CC) $(CFLAGS) -c -o ft_ofuncts.o ft_ofuncts.c
+NAME			= libftprintf.a
 
-$(NAME):
-	@ar rc $(NAME) $(OBJS)
-	@echo $(MYFACE)
+all:			$(NAME)
 
-clean :
-	@$(RM) $(OBJS)
+$(NAME):		$(OBJS)
+				@ar rcs $(NAME) $(OBJS)
+%.o: %.c $(INC)
+	@$(CC) -c $< -o $@ $(CFLAGS)
 
-fclean : clean
-	@$(RM) $(NAME)
+clean:
+				@$(RM) $(OBJS)
 
-re : fclean all
+fclean:			clean
+				@$(RM) $(NAME)
 
-.PHONY: all clean fclean re
+re:				fclean $(NAME)
+
+.PHONY:			all clean fclean re
