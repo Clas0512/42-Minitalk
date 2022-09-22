@@ -3,24 +3,24 @@ CL		= client.c
 SR		= server.c
 NAMECL	= client
 NAMESR	= server
-PRWAY	= make -C ./ft_printf
 CFLAGS	= -Wall -Wextra -Werror
 PRA		= ./ft_printf/libftprintf.a
 
 all :$(PRA) $(NAMECL) $(NAMESR)
 
 $(PRA) :
-	$(PRWAY)
+	@make -C ./ft_printf 
 
 $(NAMECL) :
 	@$(CC) $(CL) $(PRA) -o $(NAMECL)
 
 $(NAMESR) :
 	@$(CC) $(SR) $(PRA) -o $(NAMESR)
+	@echo "\x1b[33mcompilation success\x1b[0m"
 clean :
 	@rm -rf server
 	@rm -rf client
-	@echo "\033[0;37mFCLEAN HAS DONE"
+	@echo "\x1b[32mClean success\x1b[0m"
 
 fclean : clean
 	@make fclean -C ./ft_printf
