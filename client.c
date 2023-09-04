@@ -6,7 +6,7 @@
 /*   By: anargul <anargul@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 04:03:32 by anargul           #+#    #+#             */
-/*   Updated: 2022/09/21 21:52:41 by anargul          ###   ########.fr       */
+/*   Updated: 2022/09/22 13:24:55 by anargul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_success(int sigalnum)
 {
 	(void)sigalnum;
-	ft_printf("\033[32;1m✅✅AGA GİTTİ MESAJ...✅✅\n");
+	ft_printf("\033[32;1m✅✅DUDE MESSAGE PROCCESS SUCCESS...✅✅\n");
 }
 
 int	ft_atoi(char *str)
